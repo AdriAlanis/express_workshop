@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const { pokemon } = require('./pokedex.json');
@@ -17,8 +16,8 @@ Delete : elimina un registro
     Borrar un recurso
 */
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res, next) => {
     return res.status(200).send("Bienvenido al Pokedex");
